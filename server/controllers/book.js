@@ -13,7 +13,7 @@ module.exports.displayBookList = (req, res, next) => {
             return console.error(err);
         }
         else {
-            //console.log(BookList);
+            //console.log(bookList);
 
             // Comment this out when json is needed
             res.render('book/list',

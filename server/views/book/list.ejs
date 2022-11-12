@@ -39,25 +39,25 @@
                 <% for(let count = 0; count < BookList.length; count++) { %>
                     <tr class="d-flex">
                         <% if(typeof displayName == 'string' && displayName) { %>
-                            <td class="text-center col-2"><%= BookList[count].name %></td>
-                            <td class="text-center col-2"><%= BookList[count].author %></td>
-                            <td class="text-center col-1"><%= BookList[count].published %></td>
-                            <td class="col-4"><%= BookList[count].description %></td>
-                            <td class="text-center col-1"><%= BookList[count].price %></td>            
+                            <td class="text-center col-2"><%=BookList[count].name %></td>
+                            <td class="text-center col-2"><%=BookList[count].author %></td>
+                            <td class="text-center col-1"><%=BookList[count].published %></td>
+                            <td class="col-4"><%=BookList[count].description %></td>
+                            <td class="text-center col-1"><%=BookList[count].price %></td>            
                             <td class="text-center col-1">
-                                <a href="/book-list/edit/<%= BookList[count]._id %>" class="btn btn-primary btn-sm">
+                                <a href="/book-list/edit/<%=BookList[count]._id %>" class="btn btn-primary btn-sm">
                                 <i class="fas fa-pencil-alt"></i> Edit</a>
                             </td>
                             <td class="text-center col-1">
-                                <a href="/book-list/delete/<%= BookList[count]._id %>" class="btn btn-danger btn-sm">
+                                <a href="/book-list/delete/<%=BookList[count]._id %>" class="btn btn-danger btn-sm">
                                 <i class="fas fa-trash-alt"></i> Delete</a>
                             </td>
                          <% } else { %>
-                            <td class="text-center col-2"><%= BookList[count].name %></td>
-                            <td class="text-center col-2"><%= BookList[count].author %></td>
-                            <td class="text-center col-1"><%= BookList[count].published %></td>
-                            <td class="col-6"><%= BookList[count].description %></td>
-                            <td class="text-center col-1"><%= BookList[count].price %></td>  
+                            <td class="text-center col-2"><%=BookList[count].name %></td>
+                            <td class="text-center col-2"><%=BookList[count].author %></td>
+                            <td class="text-center col-1"><%=BookList[count].published %></td>
+                            <td class="col-6"><%=BookList[count].description %></td>
+                            <td class="text-center col-1"><%=BookList[count].price %></td>  
                          <% } %>
                     </tr>
                 <% } %>
