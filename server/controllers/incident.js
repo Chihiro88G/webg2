@@ -13,7 +13,7 @@ module.exports.displayIncidentList = (req, res, next) => {
             return console.error(err);
         }
         else {
-            console.log(incidentList);
+            // console.log(incidentList);
 
             // Comment this out when json is needed
             res.render('landingpage',
