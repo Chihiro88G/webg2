@@ -12,10 +12,13 @@
                     </h1>
 
                     <!-- For add button -->
-                    <!-- <% if(typeof displayName=='string' && displayName) { %>
-                        <a href="/book-list/add" class="btn btn-primary" role="button">
-                            <i class="fas fa-plus-circle"></i> Add a Book</a>
-                        <% } %> -->
+                    <!--  <% if(typeof displayName=='string' && displayName) { %> -->
+                        <a href="/incidents/add" class="btn btn-primary" role="button">
+                            <i class="fas fa-plus-circle"></i> Add an Incident</a>
+                        <!-- <% } %> -->
+                        
+                        <a href="/incidents/add" class="btn btn-primary" role="button">
+                            <i class="fas fa-plus-circle"></i> Add an Incident</a>
 
                     <br>
                     <table class="table table-bordered table-striped table-hover">
@@ -35,6 +38,10 @@
                                     <th class="text-center col-1">Date</th>
                                     <th class="col-6">Details</th>
                                     <th class="text-center col-1">Price</th>
+
+                                    <!--to be deleted when we integrate authentication-->
+                                    <th class="text-center col-1"></th>
+                                    <th class="text-center col-1"></th>
                                     <% } %>
                         </tr>
 
@@ -60,17 +67,17 @@
                                     </td>
 
                                     <!-- For update button -->
-                                    <!-- <td class="text-center col-1">
-                                        <a href="/book-list/edit/<%= IncidentList[count]._id %>"
+                                    <td class="text-center col-1">
+                                        <a href="/incidents/edit/<%= IncidentList[count]._id %>"
                                             class="btn btn-primary btn-sm">
                                             <i class="fas fa-pencil-alt"></i> Edit</a>
                                     </td>
+                                    
                                     <td class="text-center col-1">
-                                        <a href="/book-list/delete/<%= BookList[count]._id %>"
+                                        <a href="/incidents/delete/<%= IncidentList[count]._id %>"
                                             class="btn btn-danger btn-sm">
                                             <i class="fas fa-trash-alt"></i> Delete</a>
-                                    </td> -->
-
+                                    </td>
 
                                     <% } else { %>
                                         <td class="text-center col-2">
@@ -87,6 +94,19 @@
                                         </td>
                                         <td class="text-center col-1">
                                             <%= IncidentList[count].price %>
+                                        </td>
+
+                                        <!--Delete this when we integrate Authentication-->
+                                        <td class="text-center col-1">
+                                        <a href="/incidents/edit/<%= IncidentList[count]._id %>"
+                                            class="btn btn-primary btn-sm">
+                                            <i class="fas fa-pencil-alt"></i> Edit</a>
+                                        </td>
+                                    
+                                        <td class="text-center col-1">
+                                            <a href="/incidents/delete/<%= IncidentList[count]._id %>"
+                                                class="btn btn-danger btn-sm">
+                                                <i class="fas fa-trash-alt"></i> Delete</a>
                                         </td>
                                         <% } %>
                             </tr>
