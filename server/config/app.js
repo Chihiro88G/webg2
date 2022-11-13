@@ -23,11 +23,11 @@ let mongoose = require('mongoose');
 let DB = require('./db');
 
 // point mongoose to the DB URI
-mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(DB.URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 let mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
-mongoDB.once('open', ()=>{
+mongoDB.once('open', () => {
   console.log('Connected to MongoDB...');
 });
 
@@ -35,6 +35,7 @@ let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let booksRouter = require('../routes/book');
 let ordersRouter = require('../routes/order');
+let incidentRouter = require('../routes/incident')
 
 let app = express();
 
@@ -99,21 +100,22 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/book-list', booksRouter);
 app.use('/orders', ordersRouter);
+app.use('/incidents', incidentRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error', { title: 'Error'});
+  res.render('error', { title: 'Error' });
 });
 
 module.exports = app;
