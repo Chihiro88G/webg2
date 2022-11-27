@@ -28,3 +28,98 @@ module.exports.displayIncidentList = (req, res, next) => {
         }
     });
 }
+
+module.exports.displayAddPage = (req, res, next) => {
+
+    res.render('incidents/add', {title: 'Add Incident', 
+    displayName: req.user ? req.user.displayName : ''});
+
+
+    res.json({ success: true, msg: 'Succesfully Displayed Add Page' });
+}
+
+module.exports.processAddPage = (req, res, next) => {
+    let newIncident = Incident({
+        "name": req.body.name,
+        "author": req.body.author,
+        "published": req.body.published,
+        "description": req.body.description,
+        "price": req.body.price
+    });
+
+    Incident.create(newIncident, (err, Incident) => {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+
+            res.redirect('/incidents');
+
+            // res.json({ success: true, msg: 'Successfully Added New Incident' });
+        }
+    });
+
+}
+
+module.exports.displayEditPage = (req, res, next) => {
+    let id = req.params.id;
+
+    Incident.findById(id, (err, IncidentToEdit) => {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            //show the edit view
+            res.render('incidents/edit', {title: 'Edit Incident', Incident : IncidentToEdit, 
+            displayName: req.user ? req.user.displayName : ''});
+
+            // res.json({ success: true, msg: 'Successfully Displayed Book to Edit', book: bookToEdit });
+        }
+    });
+}
+
+module.exports.processEditPage = (req, res, next) => {
+    let id = req.params.id
+
+    let updatedIncident = Incident({
+        "_id": id,
+        "name": req.body.name,
+        "author": req.body.author,
+        "published": req.body.published,
+        "description": req.body.description,
+        "price": req.body.price
+    });
+
+    Incident.updateOne({ _id: id }, updatedIncident, (err) => {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            // refresh the book list
+            res.redirect('/incidents');
+
+            // res.json({ success: true, msg: 'Successfully Edited Book', book: updatedBook });
+        }
+    });
+}
+
+module.exports.performDelete = (req, res, next) => {
+    let id = req.params.id;
+
+    Incident.remove({ _id: id }, (err) => {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            // refresh the book list
+            res.redirect('/incidents');
+
+            // res.json({ success: true, msg: 'Successfully Deleted Book' });
+        }
+    });
+}
+

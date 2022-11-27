@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/80a17f12-2ad5-4f2c-8f29-21ff881794a2/AppServices/subscriptions/80a17f12-2ad5-4f2c-8f29-21ff881794a2/resourceGroups/COMP229/providers/Microsoft.Web/sites/imincident",
+    "appService.deploySubpath": "."
+}
