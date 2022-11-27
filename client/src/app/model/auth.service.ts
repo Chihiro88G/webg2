@@ -19,8 +19,9 @@ export class AuthService {
     //     return this.datasource.authenticate(user);
     // }
 
-    authenticate(username: string, password: string): Observable<boolean> {
-        return this.datasource.authenticate(username, password);
+    authenticate(user:User): Observable<any>
+    {
+        return this.datasource.authenticate(user);
     }
 
     get authenticated(): boolean {
