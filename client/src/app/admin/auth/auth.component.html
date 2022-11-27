@@ -5,16 +5,21 @@
 <main class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-sm-8 offset-sm-1">
-            <div class="bg-danger mt-2 p-2 text-center text-white" *ngIf='errorMessage != null'>
+            <div class="bg-danger mt-2 p-2 text-center text-white" 
+            *ngIf='errorMessage != null'>
                 {{errorMessage}}
             </div>
             <h1>Please Login</h1>
-            <form authcomplete='off' #form='ngForm' (ngSubmit)='authenticate(form)'>
+            <form authcomplete='off' #form='ngForm' 
+            (ngSubmit)='authenticate(form)'>
 
                 <fieldset class="form-group">
                     <label for="username">Username: </label>
-                    <input type="text" class="form-control" [(ngModel)]='user.username' name="username"
-                        placeholder="Enter Username" id="username" required autofocus autocomplete="off">
+                    <input type="text" class="form-control" 
+                    [(ngModel)]='user.username' name="username"
+                        placeholder="Enter Username" 
+                        id="username" 
+                        required autofocus autocomplete="off">
                 </fieldset>
 
                 <fieldset class="form-group">
@@ -31,6 +36,10 @@
                     <button class="btn btn-secondary m-1" routerLink="/home">
                         <i class="fas fa-undo"></i>
                         Cancel
+                    </button>
+                    <button class="btn btn-warning m-1" style="float: right;" routerLink="/register">
+                        <i class="fas fa-sign-in-alt"></i> 
+                        Register
                     </button>
                 </fieldset>
 

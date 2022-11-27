@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { RestDataSource } from "./rest.datasource";
 import { JwtHelperService } from "@auth0/angular-jwt";
+import { NgForm } from "@angular/forms";
 
 import { User } from './user.model';
 import { TestBed } from "@angular/core/testing";
@@ -24,6 +25,11 @@ export class AuthService {
 
     get authenticated(): boolean {
         return this.datasource.authToken != null;
+    }
+
+    register(user:User): Observable<any>
+    {
+        return this.datasource.register(user);
     }
 
     clear() {

@@ -62,6 +62,10 @@ export class RestDataSource {
     }));
   }
 
+  register(user: User): Observable<any> {
+    return this.http.post(this.baseUrl + 'register', user, this.httpOptions);
+  }
+
   storeUserData(token: any, user: User): void {
     localStorage.setItem('id_token', 'Bearer' + token);
     localStorage.setItem('user', JSON.stringify(user));

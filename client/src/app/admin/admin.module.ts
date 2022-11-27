@@ -1,13 +1,15 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { AdminComponent } from "./admin.component";
 import { AuthComponent } from "./auth/auth.component";
 import { AuthGuard } from "./auth/auth.guard";
+import { RegisterComponent } from "./register/register.component";
 
 const routing = RouterModule.forChild([
     { path: 'auth', component: AuthComponent },
+    { path: 'register', component: RegisterComponent },
     {
         path: 'main', component: AdminComponent, canActivate: [AuthGuard],
         children: [
@@ -19,9 +21,9 @@ const routing = RouterModule.forChild([
 ])
 
 @NgModule({
-    imports: [CommonModule, FormsModule, routing],
+    imports: [CommonModule, FormsModule, ReactiveFormsModule, routing],
     providers: [AuthGuard],
     // declarations: [AuthComponent, AdminComponent, OrderTableComponent, BookEditorComponent, BookTableComponent]
-    declarations: [AuthComponent, AdminComponent]
+    declarations: [AuthComponent, AdminComponent, RegisterComponent]
 })
 export class AdminModule { }
