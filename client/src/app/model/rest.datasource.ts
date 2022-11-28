@@ -48,18 +48,9 @@ export class RestDataSource {
     return this.http.get<Order[]>(this.baseUrl + 'orders');
   }
 
-  authenticate(user: string, pass: string): Observable<boolean> {
-    return this.http.post<any>(this.baseUrl + "login", {
-      name: user, password: pass
-    }).pipe(map(response => {
-      this.authToken = response.success ? response.token : null;
-
-      // temporary solution!!!!!
-      this.user.displayName = user;
-      this.storeUserData(response.token, this.user)
-
-      return response.success;
-    }));
+  authenticate(user: User): Observable<any>
+  {
+      return this.http.post<any>(this.baseUrl + 'login', user, this.httpOptions)
   }
 
   register(user: User): Observable<any> {
