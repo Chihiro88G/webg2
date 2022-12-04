@@ -11,13 +11,13 @@ let incidentController = require('../controllers/incident');
 router.get('/', incidentController.displayIncidentList);
 
 /* GET Route for displaying the Add page - CREATE Operation */
-router.get('/add', incidentController.displayAddPage);
+// router.get('/add', incidentController.displayAddPage);
 
 /* POST Route for processing the Add page - CREATE Operation */
 router.post('/add', incidentController.processAddPage);
 
 /* GET Route for displaying the Edit page - UPDATE Operation */
-router.get('/edit/:id', incidentController.displayEditPage);
+// router.get('/edit/:id', incidentController.displayEditPage);
 
 /* POST Route for processing the Edit page - UPDATE Operation */
 router.post('/edit/:id', incidentController.processEditPage);

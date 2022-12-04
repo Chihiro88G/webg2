@@ -1,2 +1,12 @@
-<h1 class="bg-danger p-2 text-center text-white">CRUD OPERATIONS IS UNDER DEVELOPEMENT</h1>
-<img src="https://health.wyo.gov/wp-content/uploads/2017/05/construction-warning-with-dog.jpg" alt="under_development">
+<div class="container-fluid">
+    <div class="row"></div>
+    <div class="row mt-2">
+        <div class="col-3">
+            <button class="btn btn-outline-info btn-block" routerLink="/admin/main/incidents"
+                routerLinkActive="active">Incidents</button>
+        </div>
+        <div class="col-9">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

@@ -6,6 +6,7 @@ import { Order } from './order.model';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { User } from './user.model';
 import { map } from "rxjs/operators";
+import { Incident } from './incident.model';
 
 
 const PROTOCOL = 'http';
@@ -31,7 +32,8 @@ export class RestDataSource {
   constructor(private http: HttpClient,
     private jwtService: JwtHelperService) {
     this.user = new User();
-    this.baseUrl = `https://backend-deploy-test.onrender.com/`; //This is where the back end link should be i think. 
+    // this.baseUrl = `https://backend-deploy-test.onrender.com/`; //This is where the back end link should be i think. 
+    this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
   }
 
   getBooks(): Observable<Book[]> {
@@ -48,9 +50,8 @@ export class RestDataSource {
     return this.http.get<Order[]>(this.baseUrl + 'orders');
   }
 
-  authenticate(user: User): Observable<any>
-  {
-      return this.http.post<any>(this.baseUrl + 'login', user, this.httpOptions)
+  authenticate(user: User): Observable<any> {
+    return this.http.post<any>(this.baseUrl + 'login', user, this.httpOptions)
   }
 
   register(user: User): Observable<any> {
@@ -62,6 +63,29 @@ export class RestDataSource {
     localStorage.setItem('user', JSON.stringify(user));
     this.authToken = token;
     this.user = user;
+  }
+
+  getIncidents(): Observable<Incident[]> {
+    // go to incidentList and return incidents from backend
+    return this.http.get<Incident[]>(this.baseUrl + 'incidents');
+  }
+
+  addIncident(incident: Incident): Observable<Incident> {
+    this.loadToken();
+    return this.http.post<Book>(this.baseUrl + 'incidents/add', incident, this.httpOptions);
+  }
+
+  updateIncident(incident: Incident): Observable<Incident> {
+    this.loadToken();
+    return this.http.post<Incident>(`${this.baseUrl}incidents/edit/${incident._id}`, incident, this.httpOptions);
+  }
+
+  deleteBook(id: number): Observable<Incident> {
+    this.loadToken();
+
+    console.log(id);
+
+    return this.http.get<Incident>(`${this.baseUrl}incidents/delete/${id}`, this.httpOptions);
   }
 
   logout(): Observable<any> {

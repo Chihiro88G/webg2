@@ -16,23 +16,23 @@ module.exports.displayIncidentList = (req, res, next) => {
             // console.log(incidentList);
 
             // Comment this out when json is needed
-            res.render('landingpage',
-                {
-                    title: 'Incidents',
-                    IncidentList: incidentList,
-                    displayName: req.user ? req.user.displayName : ''
-                });
+            // res.render('landingpage',
+            //     {
+            //         title: 'Incidents',
+            //         IncidentList: incidentList,
+            //         displayName: req.user ? req.user.displayName : ''
+            //     });
 
             // This was uncommented at first
-            // res.json(bookList);
+            res.json(incidentList);
         }
     });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
 
-    res.render('incidents/add', {title: 'Add Incident', 
-    displayName: req.user ? req.user.displayName : ''});
+    // res.render('incidents/add', {title: 'Add Incident', 
+    // displayName: req.user ? req.user.displayName : ''});
 
 
     res.json({ success: true, msg: 'Succesfully Displayed Add Page' });
@@ -54,9 +54,9 @@ module.exports.processAddPage = (req, res, next) => {
         }
         else {
 
-            res.redirect('/incidents');
+            // res.redirect('/incidents');
 
-            // res.json({ success: true, msg: 'Successfully Added New Incident' });
+            res.json({ success: true, msg: 'Successfully Added New Incident' });
         }
     });
 
@@ -72,10 +72,10 @@ module.exports.displayEditPage = (req, res, next) => {
         }
         else {
             //show the edit view
-            res.render('incidents/edit', {title: 'Edit Incident', Incident : IncidentToEdit, 
-            displayName: req.user ? req.user.displayName : ''});
+            // res.render('incidents/edit', {title: 'Edit Incident', Incident : IncidentToEdit, 
+            // displayName: req.user ? req.user.displayName : ''});
 
-            // res.json({ success: true, msg: 'Successfully Displayed Book to Edit', book: bookToEdit });
+            res.json({ success: true, msg: 'Successfully Displayed Book to Edit', incident: IncidentToEdit });
         }
     });
 }
@@ -99,9 +99,9 @@ module.exports.processEditPage = (req, res, next) => {
         }
         else {
             // refresh the book list
-            res.redirect('/incidents');
+            // res.redirect('/incidents');
 
-            // res.json({ success: true, msg: 'Successfully Edited Book', book: updatedBook });
+            res.json({ success: true, msg: 'Successfully Edited Book', incident: updatedIncident });
         }
     });
 }
@@ -116,9 +116,9 @@ module.exports.performDelete = (req, res, next) => {
         }
         else {
             // refresh the book list
-            res.redirect('/incidents');
+            // res.redirect('/incidents');
 
-            // res.json({ success: true, msg: 'Successfully Deleted Book' });
+            res.json({ success: true, msg: 'Successfully Deleted Book' });
         }
     });
 }

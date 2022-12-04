@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Authors -->
+        <div class="col-3 p-2">
+            <button class="btn btn-block btn-outline-primary w-100" (click)='changeAuthor()'>
+                All Authors
+            </button>
+            <button *ngFor='let author of authors' class="btn btn-outline-primary btn-block w-100"
+                [class.active]='author == selectedAuthor' (click)='changeAuthor(author)'>
+                {{ author }}
+            </button>
+            <button class="btn btn-block btn-outline-danger w-100" (click)='addIncident()'>
+                Add Incident
+            </button>
+        </div>
+
+        <!-- Incidents -->
+        <div class="col-9 p-2">
+            <div *ngFor='let incident of incidents' class="card m-1 p-1 bg-light">
+                <h4>
+                    {{incident.name}}
+                    <span class="badge rounded-pill bg-primary float-end">
+                        {{ incident.price | currency: 'USD':'symbol':'2.2-2' }}
+                    </span>
+                </h4>
+                <div class="card-text bg-white p-1">
+                    {{incident.description}}
+                    <button class="btn btn-success m-1 p-1 btn-sm float-end" (click)='editIncident(incident._id!)'>
+                        Edit
+                    </button>
+                    <button class="btn btn-danger m-1 p-1 btn-sm float-end" (click)='deleteIncident(incident._id!)'>
+                        Delete
+                    </button>
+                </div>
+            </div>
+            <div class="form-inline float-start mr-1">
+                <select class="form-control" [value]=' incidentsPerPage'
+                    (change)='changePageSize($any($event.target).value)'>
+                    <option value="3">3 per page</option>
+                    <option value="4">4 per page</option>
+                    <option value="6">6 per page</option>
+                    <option value="8">8 per page</option>
+                </select>
+            </div>
+            <div class="btn-group float-end">
+                <button *counter='let page of pageCount' class="btn btn-outline-primary" (click)='changePage(page)'
+                    [class.active]='page == selectedPage'>
+                    {{page}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
