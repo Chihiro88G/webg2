@@ -1,7 +1,8 @@
 # Welcome to imIncident 
-![imIncident Logo]([https://myoctocat.com/assets/images/base-octocat.svg](https://lh3.googleusercontent.com/ITAI6MyQxgNV41-OlSDnCzC43195sZJvvhVur0aNP02a8Ch-ZHyZxcDSf6S4RcU2r5GVdE3a4t68KEMbW77FZqRQ1U7xqrpuwNY_Pp4irOFMJgBW70Vqv7GWuhtauBxIw4Rd7Fs-ejf0mWx5h-rn1oKiaGt0CaprDnfAlPHnx2usbx89UcT8JG-4HTlgr6u3fYTqM71onScqQhN7c4ND246E6QhCYOeqs_Z9gZswUqfpGps7YN7Qcp48-_p8J_42csxJk2PTu8aaC_Ta28ITzajqyziPTUupOJK2JlkzsYwW9plBNm_7xoj4Hpv4E31lprxIcXL4yjHPFZioGL4sPa7pNFz64x-JIa__bwoGBJ001NAYqe1o3PJlK_EIgTWNAGs5F0vWe-6kU60714yskVZfJyOoGhiWAlme859NVJrjmMU8eP6kNd0-KoHe4ObGhd6S0VWjNS-V3LZ-8Qz7PBWwTwcAZQsp5jehgSbvUlAWn4zMSayq4kDE9qqSzfhya70CAWSm73iRqwtFQE6ciOzSuGQcqdkQ07u-jG3evk-TesYYzu61mA6rq9FMrPPmpUYHiQZZdMAfVuu0OoyXLrP-Gb_n0Pyaw5Cg6SIxiaQWZrQgEp_sWTjRAUxo4ltzv79g2JlLcItE6wjmDCwillU31AoL8LAfS0QNgI3Adw-UHhbCNc1JpycE5pgJqMjysb2sq00KBKX6di0wrJMN0UY-WlB_U2KPV7lrD-STcuFOmDHfjDqKCyySArxBRohKLBzFZAxR1vGXozmNaHpwehxG-hj82lPgCspMtPY5nIKvdh7Lbc2adAbGDbDiqn49ArNJDiCqinAEuSw0Xi-vsBsCzBjmQrFAt2CRb6VGEN0gsOwJ3vlZMcY5yfkF_WQPp4vfYK7Yk9ZWCUz2wBdmiMHGTQkGRxkPrKvQmIeGEqZAYmQO_-1iaK1mmgiqWDX5_gWzl-Aa9GqqcUIFX0KkVPbVO131kOBeM_k0GYiSmv7ltKdnynpsBaQXjeOJB1F_4QIO4HLH9gjV27atJVAN71NKodxe=w536-h548-no?authuser=0))
+![This is an image](https://lh3.googleusercontent.com/UB4ASNIZMs41S3-twDINnXtDCs5W-MdnYZbxZDzYSCgzkdf3fWy52ctBLL1MH0YKGlVypkP2V294EdfgX3--YhwhHCLFIyG3a3j5oW4yij2CA3y31CTyLneB2JO3Lhpaf1BrU6U9cHs=w2400)
+
 Netlify deploy parameters:
-Base directory: "client"
-Build command: "ng build --prod"
-Publish directory: "client\dist\BookStore"
-Back-end deployed on Render: https://backend-deploy-test.onrender.com/
++ Base directory: "client"
++ Build command: "ng build --prod"
++ Publish directory: "client\dist\BookStore"
+# Back-end deployment: https://backend-deploy-test.onrender.com/
