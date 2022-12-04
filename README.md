@@ -1,4 +1,4 @@
-# imIncident 
+# Welcome to imIncident 
 # Netlify deploy parameters:
 # 1. Base directory: client
 # 2. Build command: ng build --prod
