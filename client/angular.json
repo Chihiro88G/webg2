@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "BookStore": {
+    "imIncident": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -38,7 +38,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/BookStore",
+            "outputPath": "dist/imIncident",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -93,18 +93,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "BookStore:build"
+            "browserTarget": "imIncident:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "BookStore:build:production"
+              "browserTarget": "imIncident:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "BookStore:build"
+            "browserTarget": "imIncident:build"
           }
         },
         "test": {
@@ -141,15 +141,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "BookStore:serve"
+            "devServerTarget": "imIncident:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "BookStore:serve:production"
+              "devServerTarget": "imIncident:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "BookStore"
+  "defaultProject": "imIncident"
 }

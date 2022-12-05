@@ -12,7 +12,7 @@ import { CheckoutComponent } from './book-store/checkout/checkout.component';
 import { StoreFirstGuard } from './guards/storeFirst.guard';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, data: { title: 'Home' } },
+  { path: 'home', component: HomeComponent, data: { title: 'IM Incident' } },
   { path: 'login', data: { title: 'Log in' }, redirectTo: '/admin/auth', pathMatch: 'full' },
   { path: 'register', data: { title: 'Register' }, redirectTo: 'admin/register', pathMatch: 'full' },
 

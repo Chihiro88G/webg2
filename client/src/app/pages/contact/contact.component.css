@@ -40,9 +40,9 @@ input[type=text] {
 }
 
 legend {
-	font-family: 'Times New Roman', sans-serif;
-    font-size:xx-large;
-    font-weight: bold;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 4em;
 }
 
 textarea {
@@ -63,12 +63,12 @@ textarea {
 	margin-bottom:5%;
 	margin-right: auto;
 	margin-left: auto;
-	background-color: #f2fdfd;
+	background-color: #e9ecef;
 	width:60%;
-	border: 2px solid #8f0377;
-	box-shadow: 5px 5px rgb(105, 105, 105);
+	border: 0.5px solid #c1bb85;
+	/* box-shadow: 5px 5px rgb(105, 105, 105); */
 	padding: 2%;
-	border-radius: 25px;
+	border-radius: 5px;
 }
 
 .projectList {
@@ -114,4 +114,8 @@ img {
 
 .form-control input[type=text] {
     width: 10%;
+}
+
+form {
+    text-align: center;
 }

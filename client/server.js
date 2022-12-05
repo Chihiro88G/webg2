@@ -6,7 +6,7 @@
 
 // const port = process.env.PORT || 3001;
 
-// app.use(express.static(__dirname + '/dist/BookStore'));
+// app.use(express.static(__dirname + '/dist/imIncident'));
 
 // app.get('/*', (req, res) => res.sendFile(path.join(__dirname)));
 
