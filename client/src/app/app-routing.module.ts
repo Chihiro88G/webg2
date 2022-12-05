@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent, data: { title: 'About' } },
   { path: 'products', component: ProductsComponent, data: { title: 'Products' } },
   { path: 'services', component: ServicesComponent, data: { title: 'Services' } },
-  { path: 'book-list', component: BookStoreComponent, data: { title: 'Book Store' }, canActivate: [StoreFirstGuard] },
+  { path: 'incidents', component: BookStoreComponent, data: { title: 'Incidents' }, canActivate: [StoreFirstGuard] },
   { path: 'cart', component: CartDetailComponent, data: { title: 'Shopping Cart' }, canActivate: [StoreFirstGuard] },
   { path: 'checkout', component: CheckoutComponent, data: { title: 'Checkout' }, canActivate: [StoreFirstGuard] },
   { path: 'contact', component: ContactComponent, data: { title: 'Contact' } },

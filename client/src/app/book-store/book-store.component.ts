@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Book } from '../model/book.model';
 import { BookRepository } from './../model/book.repository';
-import { Cart } from '../model/cart.model';
+
+import { Incident } from 'src/app/model/incident.model';
+import { IncidentRepository } from 'src/app/model/incident.repository';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,50 +14,37 @@ import { Router } from '@angular/router';
 export class BookStoreComponent
 {
   public selectedAuthor = null;
-  public booksPerPage = 4;
+  public incidentsPerPage = 4;
   public selectedPage = 1;
 
-  constructor(private repository: BookRepository,
-              private cart: Cart,
-              private router: Router) { }
+  constructor(private repository: IncidentRepository,
+      private router: Router) { }
 
-  get books(): Book[]
-  {
-    const pageIndex = (this.selectedPage - 1) * this.booksPerPage;
-    return this.repository.getBooks(this.selectedAuthor)
-    .slice(pageIndex, pageIndex + this.booksPerPage);
+  get incidents(): Incident[] {
+    const pageindex = (this.selectedPage - 1) * this.incidentsPerPage;
+    return this.repository.getIncidents(this.selectedAuthor)
+      .slice(pageindex, pageindex + this.incidentsPerPage);
   }
 
-  get authors(): string[]
-  {
+  get authors(): string[] {
     return this.repository.getAuthors();
   }
 
-  changeAuthor(newAuthor?: string): void
-  {
+  changeAuthor(newAuthor?: any): void {
     this.selectedAuthor = newAuthor;
   }
 
-  changePage(newPage: number): void
-  {
+  changePage(newPage?: any): void {
     this.selectedPage = newPage;
   }
 
-  changePageSize(newSize: number): void
-  {
-    this.booksPerPage = Number(newSize);
+  changePageSize(newSize?: number): void {
+    this.incidentsPerPage = Number(newSize);
     this.changePage(1);
   }
 
-  get pageCount(): number
-  {
+  get pageCount(): number {
     return Math.ceil(this.repository
-      .getBooks(this.selectedAuthor).length / this.booksPerPage);
-  }
-
-  addBookToCart(book: Book): void
-  {
-    this.cart.addLine(book);
-    this.router.navigateByUrl('/cart');
+      .getIncidents(this.selectedAuthor).length / this.incidentsPerPage);
   }
 }

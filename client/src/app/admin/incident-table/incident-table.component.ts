@@ -55,7 +55,7 @@ export class IncidentTableComponent implements OnInit {
       this.repository.deleteIncident(id);
     }
     else {
-      window.location.reload(); // refresh fix
+      // window.location.reload(); // refresh fix
       this.router.navigateByUrl('/admin/main/incidents');
     }
   }
