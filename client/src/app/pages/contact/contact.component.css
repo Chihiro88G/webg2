@@ -1,0 +1,117 @@
+/* CSS styling */
+
+p {
+    color: rgb(133, 0, 0);
+}
+
+h1 {
+    color: blue;
+    text-align: center;
+}
+
+h4 {
+    color: rgb(26, 53, 26);
+    line-height: 40px;
+}
+
+li {
+    font-size: large;
+
+}
+
+ul {
+    list-style: square;
+}
+
+label {
+	margin-left: 3px;
+    margin-top: 20px;
+    margin-bottom: 5px;	
+	font-size:large;
+	font-family:Arial, Helvetica, sans-serif;
+	display:inline-block;
+}
+
+input[type=text] {
+	width: 40%;
+	padding: 6px 10px;
+	margin: 8px 0;
+	box-sizing: border-box;
+}
+
+legend {
+	font-family: 'Times New Roman', sans-serif;
+    font-size:xx-large;
+    font-weight: bold;
+}
+
+textarea {
+    width: 60%;
+}
+
+.navbar-brand {
+    font-size: 1.3em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand:hover {
+    color: rgb(180, 180, 180);
+}
+
+.innerdiv {
+	margin-top:2%;
+	margin-bottom:5%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #f2fdfd;
+	width:60%;
+	border: 2px solid #8f0377;
+	box-shadow: 5px 5px rgb(105, 105, 105);
+	padding: 2%;
+	border-radius: 25px;
+}
+
+.projectList {
+    text-align: center;
+    list-style: none;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.projectList li {
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 50px;
+    line-height: 50px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: auto;
+}
+
+.navImg {
+    width: 100px;
+    height: 60px;
+}
+
+.aboutImg {
+    width: 300px;
+    border: 2px solid #8f0377;
+}
+
+.imgList {
+    border: 2px solid #8f0377;
+}
+
+.imgError {
+    width: 40%;
+    height: auto;
+}
+
+.form-control input[type=text] {
+    width: 10%;
+}
