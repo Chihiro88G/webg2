@@ -14,6 +14,10 @@ export class ContactComponent extends BasePageComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    
   }
-
+  alert() {
+    window.alert('Thanks for your message!');
+  }
+  
 }
