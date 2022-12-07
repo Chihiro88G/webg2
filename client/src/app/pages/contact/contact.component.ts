@@ -18,7 +18,6 @@ export class ContactComponent extends BasePageComponent implements OnInit {
   }
   alert() {
     window.alert('Thanks for your message!');
-    window.location.href = 'https://imincident.netlify.app/home';
   }
   
 }
