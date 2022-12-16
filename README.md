@@ -3,7 +3,7 @@
 
 Back-end deployment: 
 # https://imincident.herokuapp.com/
-# or
+or
 # https://backend-deploy-test.onrender.com/
 
 Netlify deploy parameters:
